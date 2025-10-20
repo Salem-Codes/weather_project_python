@@ -24,8 +24,7 @@ def convert_date(iso_string):
     Returns:
         A date formatted like: Weekday Date Month Year e.g. Tuesday 06 July 2021
     """
-    pass
-
+    return f"{datetime.fromisoformat(iso_string).strftime('%A%D%B%Y')}"
 
 def convert_f_to_c(temp_in_fahrenheit):
     """Converts a temperature from Fahrenheit to Celcius.
@@ -35,7 +34,7 @@ def convert_f_to_c(temp_in_fahrenheit):
     Returns:
         A float representing a temperature in degrees Celcius, rounded to 1 decimal place.
     """
-    pass
+    return(round((temp_in_fahrenheit - 32) * 5.0/9.0,1))
 
 
 def calculate_mean(weather_data):
@@ -46,7 +45,10 @@ def calculate_mean(weather_data):
     Returns:
         A float representing the mean value.
     """
-    pass
+toal = sum(weather_data)
+count = len(weather_data)
+mean = total / count
+    return float(mean) 
 
 
 def load_data_from_csv(csv_file):
