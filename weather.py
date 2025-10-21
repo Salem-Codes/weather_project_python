@@ -121,14 +121,23 @@ def generate_daily_summary(weather_data):
     Returns:
         A string containing the summary information.
     """
+def generate_daily_summary(weather_data):
+    """Outputs a daily summary for the given weather data.
+
+    Args:
+        weather_data: A list of lists, where each sublist represents a day of weather data.
+    Returns:
+        A string containing the summary information.
+    """
     daily_summary = ""
+    
     for day in weather_data:
         date = convert_date(day[0])
         min_temp = format_temperature(convert_f_to_c(float(day[1])))
         max_temp = format_temperature(convert_f_to_c(float(day[2])))
-        daily_summary += f"---- {date} ----\n"
-        daily_summarey += f"minimum temperature: {min_temp}\n"
-        daily_summary += f"maximum temperature: {max_temp}\n\n"
-        return daily_summary.strip()
-    summary = (); generate_summary(weather_data)
-    return summary
+
+    daily_summary += f"---- {date} ----\n"
+    daily_summary += f"  Minimum temperature: {min_temp}\n"
+    daily_summary += f"  Maximum temperature: {max_temp}\n\n"
+
+    return daily_summary.strip()
