@@ -122,9 +122,4 @@ def generate_daily_summary(weather_data):
     Returns:
         A string containing the summary information.
     """
-    generate_daily_summarydaily_summary = ()
-    for day in weather_data:
-        date = convert_date(day[0])
-        max_temp = format_temperature(convert_f_to_c(float(day[1])))
-        min_temp = format_temperature(convert_f_to_c(float(day[2])))
-        
+    
